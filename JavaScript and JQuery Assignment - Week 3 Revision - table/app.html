@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mission App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+      
+    <!-- JS -->
+    <script src="scripts/jquery-1.8.3.min.js"></script>
+    <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
+
+    <script src="scripts/costs.js"></script><!--link to the costs script-->
+
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1.0"><!--set device-width-->
+
+  </head><!--end head-->
+  <body onload="locationTable()"><!--attempt to load table on body load-->
+    <div data-role="page">
+      <div data-role="navbar"><!--navbar data-role-->
+        <ul><!--begin unordered list-->
+          <li><a href="file:app.html"
+            class="ui-btn-active ui-state-persist">
+          Trip Projection</a><!--link to app.html in navbar menu and call it Trip Projection-->
+          </li>
+          <li><a href="file:missionary.html">
+          Missionary Page</a><!--link to app.html in navbar menu and call it Missionary Page-->
+          </li>
+          <li><a href="file:index.html">
+            My Details</a><!--link to app.html in navbar menu and call it My Details-->
+          </li>
+        </ul>
+      </div>
+      <br>
+      <div data-role= header>Trip Projection</div>
+      <!--<div data-role="content">-->
+
+        <label for="members">Members:</label><!--label members-->
+        <input type="range" id="members"
+        min="1" max="20"><!--set input type to a range slider and set min and max range for members-->
+
+        <label for="days">Days:</label>
+        <input type="number" id="days"
+        min="1" max="10"><!--set input type to number and set min and max range for days-->
+        <br>
+
+    <form >
+
+      <!--create a field set with three location selections, displaying the lcoations and their values-->
+      <fieldset data-role="controlgroup" id="myField">
+          <legend>Choose a location:</legend><br>
+          <input type="radio" data-role="none" id="radio1" name="location" value="">
+          <label for="radio1">Hong Kong: $1200.00</label><br><br>
+
+          <input type="radio" data-role="none" id="radio2" name="location" value="">
+          <label for="radio2">Korea: $2700.00</label><br><br>
+
+          <input type="radio" data-role="none" id="radio3" name="location" value="">
+          <label for="radio3">Singapore: $1000.00</label><br> <br>
+      </fieldset>
+
+    </form>
+
+
+        <button onclick="scripts/locationCosts()">Calculate Cost</button><!--link to function in mission.js with button click called Display-->
+      <br>
+
+
+      <div data-role= footer><small>Mission Trip Projection</small></div><!--footer data-role-->
+      <br>
+    </div>
+  </body>
+</html>
